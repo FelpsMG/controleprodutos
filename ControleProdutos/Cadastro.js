@@ -26,7 +26,7 @@ export default class Cadastro extends Component {
 _getButton = async() =>{
     const api = axios.create();
       const response = await api.post(
-        'https://us-central1-reactnativebasics-5a8a4.cloudfunctions.net/api/produtos/cadastro', 
+        'https://us-central1-reactnativebasics-5a8a4.cloudfunctions.net/api1/testes/cadastro', 
         {
           nome : this.state.nome,
           quantidade : this.state.quantidade

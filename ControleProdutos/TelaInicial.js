@@ -6,7 +6,7 @@ import { withNavigationFocus } from 'react-navigation';
 
  class TelaInicial extends Component {
   static navigationOptions = {
-    title: 'Inventário ENA',
+    title: 'Controle de Produtos',
     headerStyle: {
       backgroundColor: '#000',
     },
@@ -37,7 +37,7 @@ componentDidUpdate(prevProps,prevState){
   excluirProduto = async (idd) =>{
     const api = axios.create();
     const response = await api.post(
-      'https://us-central1-reactnativebasics-5a8a4.cloudfunctions.net/api/produtos/excluir', 
+      'https://us-central1-reactnativebasics-5a8a4.cloudfunctions.net/api1/testes/excluir', 
       {id: idd}
       )
       this.loadData("");
@@ -47,7 +47,7 @@ componentDidUpdate(prevProps,prevState){
   loadData = async (texto) => {
     const api = axios.create();
     const response = await api.post(
-      'https://us-central1-reactnativebasics-5a8a4.cloudfunctions.net/api/produtos/busca', 
+      'https://us-central1-reactnativebasics-5a8a4.cloudfunctions.net/api1/testes/busca', 
       {nome: texto}
     )
     this.setState({possuidados: true , dados:response.data})
@@ -55,7 +55,7 @@ componentDidUpdate(prevProps,prevState){
     loadDataI = async () => {
       const api = axios.create();
       const response = await api.get(
-        'https://us-central1-reactnativebasics-5a8a4.cloudfunctions.net/api/produtos'
+        'https://us-central1-reactnativebasics-5a8a4.cloudfunctions.net/api1/testes'
       )
       this.setState({possuidados: true , dados:response.data})
       };
